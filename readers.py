@@ -90,7 +90,7 @@ if st.button("Recompress to JJS sb data"):
             new_b64 = recompress(edited_obj)
             st.success("Hope this helps :)!")
             st.code(new_b64, language='text')
-            st.download_button("Download New Base64", new_b64, "compressed.txt", "text/plain")
+            st.download_button("Download data", new_b64, "compressed.txt", "text/plain")
     except Exception as e:
         st.error(f"Invalid JSON: {e}")
 
