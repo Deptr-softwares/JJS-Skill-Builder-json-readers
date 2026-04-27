@@ -29,9 +29,9 @@ def reformat(raw_json_string):
     properties = data if isinstance(data, list) else [data]
 
     for property in properties:
-      if 'DATA' in item and isinstance(item['DATA'], str):
+      if 'DATA' in property and isinstance(property['DATA'], str):
         try:
-          item['DATA'] = json.loads(item['DATA'])
+          property['DATA'] = json.loads(property['DATA'])
         except json.JSONDecodeError:
           pass
         return json.dumps(data, indent=4)
