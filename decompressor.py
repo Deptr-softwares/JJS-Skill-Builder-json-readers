@@ -35,8 +35,8 @@ def reformat(raw_json_string):
         except json.JSONDecodeError:
           pass
         return json.dumps(data, indent=4)
-    except Exception as e:
-      return f"Reformatting Error: {str(e)}"
+  except Exception as e:
+    return f"Reformatting Error: {str(e)}"
 
 st.title("JJS sb data decompressor")
 st.write("Paste you code below to see the raw JSON data; the JSON data will be reformatted for actual readability and editability")
