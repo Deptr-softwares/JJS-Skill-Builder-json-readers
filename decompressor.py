@@ -26,12 +26,12 @@ def decompress(b64_string):
 def reformat(raw_json_string):
   try:
     data = json.loads(raw_json_string)
-    properties = data if isinstance(data, list) else [data]
+    items = data if isinstance(data, list) else [data]
 
-    for property in properties:
-      if 'DATA' in property and isinstance(property['DATA'], str):
+    for item in items:
+      if 'DATA' in item and isinstance(item['DATA'], str):
         try:
-          property['DATA'] = json.loads(property['DATA'])
+          item['DATA'] = json.loads(item['DATA'])
         except json.JSONDecodeError:
           pass
         return json.dumps(data, indent=4)
